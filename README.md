@@ -36,7 +36,8 @@ Hints for pushing to git/github
 - git remote add origin git@github.com:carloshvp/Public-notes.git
 - git remote -v
     - List remotes
-- 
+- git pull --allow-unrelated-histories
+    - This is useful to be able to bring together repos in different locations which both already have some unrelated commits
 
 
 ### How to make a pull request
@@ -44,6 +45,8 @@ Hints for pushing to git/github
 1. Go to GitHub
 1. Search and click the "*Create Pull-request*" button :)
 
+### VIM exit
+I hate Vim because I always forget how to use it. If I am ever trapped there, press "Esc" and write ":wq" and "Enter" so that it is saves and exit
 
 # ToDos
 - show git branch/status in terminal?
