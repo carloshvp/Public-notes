@@ -48,6 +48,28 @@ Hints for pushing to git/github
 ### VIM exit
 I hate Vim because I always forget how to use it. If I am ever trapped there, press "Esc" and write ":wq" and "Enter" so that it is saves and exit
 
+## Python tricks in VSCode
+
+From: [Python development with Visual Studio Code](https://mybuild.microsoft.com/sessions/359a2d3c-56da-4869-9b04-672ffb64c9dd?source=sessions)
+
+### Autogeneration of dependencies
+
+- pip install pip-tools
+    - REquirement for next steps
+- pip-compile
+    - Requires a requirements.in with dependencies without version number and creates the requirements.txt
+- pip install -r requirements.txt
+ 
+### Others
+
+- Use Black for auto-formatting
+- While debugging in VSCode a piece of Python, we can set conditional breakpoints by right clicking on a breakpoint and "Edit"
+    - Expression: can halt execution only if a certain condition is met (e.g. "X > 10" )
+    - Hit count
+    - Log message: debugger will not stop, but the desired message is printed in the debug console
+- Support for PyTest, UnitTest and nose (which one is better? I know only PyTest)
+- 
+
 # ToDos
 - show git branch/status in terminal?
 - MD tutorial for advanced stuff
