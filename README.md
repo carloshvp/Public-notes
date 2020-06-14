@@ -20,17 +20,24 @@ Hints for pushing to git/github
 - "git status" to see where we are
 - "git checkout -b feature/new-branch-creation"
 - git commit -m "here some message" -m "Here some description"
+- git commit --amend --no-edit
+  - This rewrites the last commit to include in it the changes you have just made (like a squash of the last 2 commits)
 - git merge master
 - git checkout master
 - git push
 - git push -u origin master
   - -u sets the default remote and next time "git push" is enough (no "origin master" required)
 - git pull origin master
+  - Conflicts possible
+- git fetch
+  - Same as pull, it gets from origin the changes, but it does NOT merge them with the local repo, so no conflicts are possible
 - git branch -d feature/new-branch-creation
 - git reset HEAD~1
   - This comes back 1 commit (undo)
 - git log
-  - See last commits
+  - See last commits in all branches
+- git log --oneline --decorate --graph --all
+  - Last commits in all branches and beautified
 - git reset 22984ea49d...
   - Come back to that commitID
 - git reset --hard 22984ea49d...
@@ -40,6 +47,13 @@ Hints for pushing to git/github
   - List remotes
 - git pull --allow-unrelated-histories
   - This is useful to be able to bring together repos in different locations which both already have some unrelated commits
+- git rebase
+  - Same as git merge, but copies all commits in the feature branch to master (not only 1 commit)
+  - To use this, 2 need to execute to rebases, one from feature branch against master (to sync feature branch with master) and one with the feature branch from master (to sync master with the feature branch). Opposite order destroys latest changes in master
+- git rebase -i HEAD~3
+  - This open vim with the last 3 commits, so that we can squash them or do anything else. To squash commits, change "pick" to "squash", those with squash will be combined with the immediate "pick" above them and create a new commit (with new commit ID). We will need to edit the commit messages too. If we want to drop editing the commit messages, simply use "fixup" instead of "squash"
+  - We can also use "reword" insetead of pick or squash, which allows me to change the commit message
+  - When pushing to origin, we will get an error "non-fast-forward" because git believes the tip of the branch is behind to the one in origin. To solve this, repeat the git push with -f for "force"
 
 ### How to make a pull request
 
@@ -49,7 +63,9 @@ Hints for pushing to git/github
 
 ### VIM exit
 
-I hate Vim because I always forget how to use it. If I am ever trapped there, press "Esc" and write ":wq" and "Enter" so that it is saves and exit
+I hate Vim because I always forget how to use it. If I am ever trapped there, press "Esc" and write ":wq" and "Enter" so that it is saves and exit.
+
+To edit a file opened in VIM, press i
 
 ## VSCode tricks
 
