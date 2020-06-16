@@ -115,3 +115,4 @@ To attach a compute target (kernel) to a Jupyter Notebook:
 - Do some more trainings in GitHub
 - Do some more trainings in Kaggle
 - Create [VSCode Extension](https://code.visualstudio.com/api/get-started/your-first-extension) (written in JS) with OSS vulnerability search for non-OSS projects
+- Try to understand why Microsoft can include a Linux Kernel (GPLv2) into Windows OS and Marketplace without the need to open source the whole Windows OS
